@@ -1,0 +1,77 @@
+@keyframes slide-in {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    25% {
+        transform: translateY(-7px);
+        opacity: 0.25;
+    }
+    50% {
+        transform: translateY(-5px);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translateY(-3px);
+        opacity: 0.75;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes slide-out {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.75;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.25;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.todo {
+    animation: slide-in 0.2s linear;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    margin: 0.4rem 0;
+    border: 3px inset black;
+    border-radius: 10px;
+    background: linear-gradient(var(--react-teal), var(--react-white))
+}
+.todo-ease-out {
+    animation: slide-out 0.2s linear;
+}
+.todo-edit {
+    width: 100%;
+    padding-left: 0.4rem;
+    margin-right: 1.2rem;
+    line-height: 1.4;
+    font-size: 1.4rem;
+}
+.todo-text {
+    padding: 0;
+    margin: 0;
+    font-size: 1.4rem;
+}
+.todo-action-button {
+    background: transparent;
+    border: none;
+    margin: 0 0.4rem;
+    cursor: pointer;
+}
+.todo-action-button:nth-of-type(1) {
+    margin-left: auto;
+}
+.todo-action-button:hover .todo-icon {
+    stroke: var(--react-blue);
+}

@@ -1,0 +1,136 @@
+/** Site configuration **/
+:root {
+    /* Colours */
+    --react-teal: #61dae8;
+    --react-blue: #3b3b8a;
+    --react-dark-blue: #282c34;
+    --react-darker-blue: #20232a;
+    --react-black: #000;
+    --react-white: #fff;
+    /* Dimensions */
+    --header-height: 100px;
+    --footer-height: 160px;
+    /* Site Component Variables */
+    --site-background: var(--react-white);
+    --site-font-size: 14px;
+    --site-font-color: var(--react-black);
+    --header-background: var(--react-darker-blue);
+    --header-shadow: var(--react-darker-blue);
+    --header-font-color: var(--react-teal);
+    --footer-background: var(--react-dark-blue);
+    --footer-font-color: var(--react-white);
+    --footer-shadow: var(--react-dark-blue);
+}
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/**
+ *
+ * MAIN SITE STYLES
+ *
+ */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    font-size: var(--site-font-size);
+    margin: 0;
+    padding: 0;
+    background-color: var(--site-background);
+    color: var(--site-font-color);
+}
+body {
+    font-family: 'Jost', sans-serif, antialiased;
+    line-height: 1.6;
+}
+.site-grid {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: var(--header-height) minmax(max-content, calc(100vh - var(--header-height))) minmax(max-content, var(--footer-height));
+    grid-template-columns: 100%;
+}
+
+/**
+ * 
+ * HEADER STYLES
+ *
+ */
+.header {
+    grid-row: 1 / 2;
+    background-color: var(--header-background);
+    color: var(--header-font-color);
+    box-shadow: 0px 0px 10px 5px var(--header-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.site-title {
+    padding: 0;
+    margin: 0;
+    font-size: 3.6rem;
+    text-align: center;
+    vertical-align: middle;
+}
+@keyframes react-icon-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.site-logo {
+    animation-name: react-icon-spin;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    width: 5.2rem;
+}
+
+/**
+ *
+ * BODY STYLES
+ *
+ */
+.body {
+    grid-row: 2 / 3;
+    padding: 2.4rem 6.5rem;
+}
+@media (min-width: 768px) {
+    .body {
+        margin-left: 8rem;
+        margin-right: 8rem;
+    }
+}
+@media (min-width: 1080px) {
+    .body {
+        margin-left: 16rem;
+        margin-right: 16rem;
+    }
+}
+@media (min-width: 1240px) {
+    .body {
+        margin-left: 24rem;
+        margin-right: 24rem;
+    }
+}
+
+/**
+ *
+ * FOOTER STYLES
+ *
+ */
+.footer {
+    grid-row: 3 / 4;
+    padding: 0.4rem 0.2rem;
+    background-color: var(--footer-background);
+    color: var(--footer-font-color);
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px 5px var(--footer-shadow);
+    overflow: hidden;
+}
